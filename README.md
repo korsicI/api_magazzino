@@ -26,7 +26,13 @@ I file sui quali si è lavorato sono:
 
 L'API si copone di 4 endpoint:
 
+r'^api/scatole/'
+r'^api/scatole/<int:pk>/'
+r'^api/unita/'
+r'^api/unita/<int:pk>/'
 
+
+Descrizione
 
 r'^api/scatole/'
 
@@ -37,10 +43,10 @@ r'^api/scatole/'
     Superuser puo listare tutte le scatole.
 
     Per la creazione di un oggetto "Scatola" oltre ad essere autenticati 
-    è necessario passare i seguenti dati in ingresso in formato JSON e modalità POST:
+    è necessario passare i seguenti dati ("descrizione" puo essere omesso)in ingresso in formato 
+    JSON e modalità POST:
 
      {
-        
         "nome": "r'^[a-zA-Z]+$'",  
         "unita": 1r'^\d+$'
     }
@@ -51,15 +57,16 @@ r'^api/scatole/'
 r'^api/scatole/<int:pk>/'
 
 
-    Questo endpoint recupera, aggiorna o elimina un oggetto "Scatola" in base ai permessi dell'utente e dati in ingresso e metodi utilizzati.(pk è la chiave primaria dell'oggetto)
+    Questo endpoint recupera, aggiorna o elimina un oggetto "Scatola" in base ai permessi 
+    dell'utente e dati in ingresso e metodi utilizzati.(pk è la chiave primaria dell'oggetto)
 
 
 
 r'^api/unita/'
 
 
-    Questo endpoint recupera o crea un elenco di oggetti "Unita" o ne crea in base ai permessi dell'utente
-    e dei dati in ingresso.
+    Questo endpoint recupera o crea un elenco di oggetti "Unita" o ne crea in base 
+    ai permessi dell'utente e dei dati in ingresso.
 
     Utenti semplici possono listare solo le unita di cui sono proprietari.
     Superuser puo listare tutte le unita e crearle.
@@ -73,14 +80,7 @@ r'^api/unita/'
         "max_scatole": r'^\d+$'
     }
 
-
-
------------------------
 r'^api/unita/<int:pk>/'
-
-    Questo endpoint recupera, aggiorna o elimina un oggetto "Unita" in base ai permessi dell'utente e
-    dati in ingresso.(pk è la chiave primaria dell'oggetto)
------------------------
 
     Questo endpoint recupera,  o elimina un oggetto "Unita"  in base ai permessi dell'utente e
     dati in ingresso.(pk è la chiave primaria dell'oggetto)
