@@ -10,8 +10,8 @@ Per quanto riguarda la documentazione di quest'ultimi rimando al sito ufficiale
 alla specifica pagina https://djoser.readthedocs.io/en/latest/jwt_endpoints.html.
 
 Per l'autenticazione è stato utilizzato il token JWT, che viene generato dal 
-endpoint /auth/jwt/create/
-e viene passato come header nelle richieste successive.
+endpoint /auth/jwt/create/ e viene passato come header nelle richieste successive.
+
 
 I file sui quali si è lavorato sono:
     - settings.py
@@ -26,15 +26,15 @@ I file sui quali si è lavorato sono:
 
 L'API si copone di 4 endpoint:
 
-r'^api/scatole/'
-r'^api/scatole/<int:pk>/'
-r'^api/unita/'
-r'^api/unita/<int:pk>/'
+1. r'^api/scatole/'
+2. r'^api/scatole/<int:pk>/'
+3. r'^api/unita/'
+4. r'^api/unita/<int:pk>/'
 
 
 Descrizione
 
-r'^api/scatole/'
+1. r'^api/scatole/'
 
     Questo endpoint recupera o crea un elenco di oggetti "Scatola" o crea in base ai permessi dell'utente e
     dati in ingresso.
@@ -54,7 +54,7 @@ r'^api/scatole/'
 
 
 
-r'^api/scatole/<int:pk>/'
+2. r'^api/scatole/<int:pk>/'
 
 
     Questo endpoint recupera, aggiorna o elimina un oggetto "Scatola" in base ai permessi 
@@ -62,7 +62,7 @@ r'^api/scatole/<int:pk>/'
 
 
 
-r'^api/unita/'
+3. r'^api/unita/'
 
 
     Questo endpoint recupera o crea un elenco di oggetti "Unita" o ne crea in base 
@@ -80,7 +80,7 @@ r'^api/unita/'
         "max_scatole": r'^\d+$'
     }
 
-r'^api/unita/<int:pk>/'
+4. r'^api/unita/<int:pk>/'
 
     Questo endpoint recupera,  o elimina un oggetto "Unita"  in base ai permessi dell'utente e
     dati in ingresso.(pk è la chiave primaria dell'oggetto)
