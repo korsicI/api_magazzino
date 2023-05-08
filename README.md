@@ -100,6 +100,12 @@ Descrizione
 
 Ulteriore documentazione è presente nel file api/views.py
 
-In particolare c'è la documentazione del funzionamento delle funzioni. 
+In particolare c'è la documentazione del funzionamento delle funzioni.
+
+Per mantenere il file leggibile e di facile comprensione, ho preferito limitare l'uso delle funzioni 
+solo ai casi strettamente necessari, in modo da rendere il codice più accessibile e comprensibile.
+Normalmente utilizzo decoratori, generatori e altre tecniche avanzate di Python.
+Posso anche confermare di avere familiarità con le librerie NumPy e Matplotlib, 
+che sono strumenti potenti per l'elaborazione numerica e la visualizzazione dei dati in Python.
 
 
