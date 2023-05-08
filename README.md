@@ -12,6 +12,14 @@ alla specifica pagina https://djoser.readthedocs.io/en/latest/jwt_endpoints.html
 Per l'autenticazione è stato utilizzato il token JWT, che viene generato dal 
 endpoint /auth/jwt/create/ e viene passato come header nelle richieste successive.
 
+Nei setting e stato modificato timedelta per facilitare il controllo.
+
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('JWT',),
+   'ACCESS_TOKEN_LIFETIME': timedelta(days=1)
+}
+
+
 
 I file sui quali si è lavorato sono:
     - settings.py
@@ -39,7 +47,7 @@ Descrizione
     Questo endpoint recupera o crea un elenco di oggetti "Scatola" o crea in base ai permessi dell'utente e
     dati in ingresso.
 
-    Utenti semplici possono listare solo le scatole di cui sono proprietari.
+    Utenti semplici possono visualizzare solo le scatole di cui sono proprietari.
     Superuser puo listare tutte le scatole.
 
     Per la creazione di un oggetto "Scatola" oltre ad essere autenticati 
@@ -68,8 +76,8 @@ Descrizione
     Questo endpoint recupera o crea un elenco di oggetti "Unita" o ne crea in base 
     ai permessi dell'utente e dei dati in ingresso.
 
-    Utenti semplici possono listare solo le unita di cui sono proprietari.
-    Superuser puo listare tutte le unita e crearle.
+    Utenti semplici possono visualizzare solo le unita di cui sono proprietari.
+    Mentre gli amministratori possono visualizzare e creare tutte le unità. 
 
     Per la creazione di un oggetto "Unita" oltre ad essere autenticati come superuser 
     è necessario passare i seguenti dati in ingresso in formato JSON e modalità POST:
@@ -82,9 +90,9 @@ Descrizione
 
 4. r'^api/unita/<int:pk>/'
 
-    Questo endpoint recupera,  o elimina un oggetto "Unita"  in base ai permessi dell'utente e
-    dati in ingresso.(pk è la chiave primaria dell'oggetto)
-    Per eliminare un oggetto "Unita" oltre ad essere autenticati come superuser
+    Questo endpoint recupera o elimina un oggetto "Unita" in base ai permessi dell'utente 
+    e ai dati in ingresso. "pk" rappresenta la chiave primaria dell'oggetto. 
+    Per eliminare un oggetto "Unita", è necessario essere autenticati come amministratori.
 
 
 
