@@ -58,7 +58,7 @@ def scatola_list(request):
 
 
 @api_view(['GET', 'DELETE'])
-def scatola_detaglio(request, pk):
+def scatola_dettaglio(request, pk):
     """
     Questa funzione recupera o elimina uno specifico oggetto "Scatola" in base ai permessi dell'utente e
     ingresso.
@@ -158,7 +158,7 @@ def unita_list(request):
 
 
 @api_view(['GET', 'DELETE'])
-def unita_detaglio(request, pk):
+def unita_dettaglio(request, pk):
     """
     Questa è una funzione che restituisce o cancella un unità in base alle autorizzazioni e ai permessi dell'utente.
 
